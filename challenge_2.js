@@ -11,7 +11,21 @@
 function sort (arr) {
     let newArray = [];
     // ONLY CHANGE CODE BELOW
-
+    let n = arr.length;
+    for(let i = 0; i < n; i++) {
+        let min = i;
+        for(let j = i+1; j < n; j++){
+            if(arr[j] < arr[min]) {
+                min=j; 
+            }
+         }
+         if (min != i) {
+            let tmp = arr[i]; 
+            arr[i] = arr[min];
+            arr[min] = tmp;      
+        }
+    }
+	newArray = arr
     // ONLY CHANGE CODE ABOVE
     return newArray;
 }
